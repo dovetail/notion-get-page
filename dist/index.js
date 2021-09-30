@@ -47,42 +47,43 @@ const core = __importStar(__nccwpck_require__(186));
 const client_1 = __nccwpck_require__(324);
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
-        const notionApiKey = core.getInput('notion_api_key');
-        const pageId = core.getInput('page_id');
-        if (notionApiKey === '') {
-            core.setFailed('Missing input: notion_api_key');
-            return;
-        }
-        if (pageId === '') {
-            core.setFailed('Missing input: page_id');
-            return;
-        }
+        const notionApiKey = getInputOrThrow('notion_api_key');
+        const pageId = getInputOrThrow('page_id');
         if (notionApiKey === 'TEST') {
             core.setOutput('id', pageId);
             return;
         }
         const notion = new client_1.Client({ auth: notionApiKey });
-        try {
-            const response = yield notion.pages.retrieve({ page_id: pageId });
-            core.setOutput('archived', response.archived);
-            core.setOutput('cover', response.cover);
-            core.setOutput('created_time', response.created_time);
-            core.setOutput('icon', response.icon);
-            core.setOutput('id', response.id);
-            core.setOutput('last_edited_time', response.last_edited_time);
-            core.setOutput('object', response.object);
-            core.setOutput('parent', response.parent);
-            core.setOutput('properties', response.properties);
-            core.setOutput('url', response.url);
-        }
-        catch (error) {
-            core.setFailed(error instanceof Error || typeof error === 'string'
-                ? error
-                : JSON.stringify(error));
-        }
+        const response = yield notion.pages.retrieve({ page_id: pageId });
+        core.setOutput('archived', response.archived);
+        core.setOutput('cover', response.cover);
+        core.setOutput('created_time', response.created_time);
+        core.setOutput('icon', response.icon);
+        core.setOutput('id', response.id);
+        core.setOutput('last_edited_time', response.last_edited_time);
+        core.setOutput('object', response.object);
+        core.setOutput('parent', response.parent);
+        core.setOutput('properties', response.properties);
+        core.setOutput('url', response.url);
     });
 }
-run();
+function getInputOrThrow(name) {
+    const input = core.getInput(name);
+    if (input === '') {
+        throw new Error(`Missing input: ${name}`);
+    }
+    return input;
+}
+(() => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        run();
+    }
+    catch (error) {
+        core.setFailed(error instanceof Error || typeof error === 'string'
+            ? error
+            : JSON.stringify(error));
+    }
+}))();
 
 
 /***/ }),
