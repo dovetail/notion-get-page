@@ -1,11 +1,13 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'notion-get-page'
+description: 'Retrieve a page object from notion'
+author: 'dovetail'
 inputs:
-  milliseconds: # change this
+  notion_api_key:
     required: true
-    description: 'input description here'
-    default: 'default value if applicable'
+    description: 'Notion API Key'
+  page_id:
+    required: true
+    description: 'Identifier for a Notion page'
 runs:
   using: 'node12'
   main: 'dist/index.js'
