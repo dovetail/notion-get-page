@@ -13,7 +13,7 @@
   "author": "Dovetail Research Pty Ltd",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.4.0",
+    "@actions/core": "^1.6.0",
     "@notionhq/client": "^0.4.0"
   },
   "devDependencies": {
