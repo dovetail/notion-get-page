@@ -18,18 +18,18 @@ This action lets you retrieve page details from the Notion API, exposing them as
 
 ## Outputs
 
-| output             | type         |
-| ------------------ | ------------ |
-| `archived`         | `string`     |
-| `cover`            | JSON encoded |
-| `created_time`     | `string`     |
-| `icon`             | JSON encoded |
-| `id`               | `string`     |
-| `last_edited_time` | `string`     |
-| `object`           | JSON encoded |
-| `parent`           | JSON encoded |
-| `properties`       | JSON encoded |
-| `url`              | `string`     |
+| output             | type     | example                                                          |
+| ------------------ | -------- | ---------------------------------------------------------------- |
+| `archived`         | `string` | `false`                                                          |
+| `cover`            | JSON     | `{"type":"external","external":{"url":"https://..."}}`           |
+| `created_time`     | `string` | `2020-03-17T19:10:04.968Z`                                       |
+| `icon`             | JSON     | `{"type":"emoji","emoji":"🎉"}`                                  |
+| `id`               | `string` | `b55c9c91-384d-452b-81db-d1ef79372b75`                           |
+| `last_edited_time` | `string` | `2020-03-17T21:49:37.913Z`                                       |
+| `object`           | JSON     | `page`                                                           |
+| `parent`           | JSON     | `{"type":"database_id","database_id":"48f8fee9-..."}`            |
+| `properties`       | JSON     | `{"Name":[{"id":"some-property-id","text":"Avocado"}]}`          |
+| `url`              | `string` | `https://www.notion.so/Avocado-b55c9c91384d452b81dbd1ef79372b75` |
 
 ## Usage
 
