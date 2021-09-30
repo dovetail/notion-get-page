@@ -2,6 +2,7 @@
 
 - [Introduction](#introduction)
 - [Inputs](#inputs)
+- [Outputs](#outputs)
 - [Usage](#usage)
 
 ## Introduction
@@ -14,6 +15,21 @@ This action lets you retrieve page details from the Notion API, exposing them as
 | ---------------- | ---------------------------- | -------- |
 | `notion_api_key` | Notion API Key               | `true`   |
 | `page_id`        | Identifier for a Notion page | `true`   |
+
+## Outputs
+
+| output             | type         |
+| ------------------ | ------------ |
+| `archived`         | `string`     |
+| `cover`            | JSON encoded |
+| `created_time`     | `string`     |
+| `icon`             | JSON encoded |
+| `id`               | `string`     |
+| `last_edited_time` | `string`     |
+| `object`           | JSON encoded |
+| `parent`           | JSON encoded |
+| `properties`       | JSON encoded |
+| `url`              | `string`     |
 
 ## Usage
 
