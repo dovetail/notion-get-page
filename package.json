@@ -14,7 +14,7 @@
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.6.0",
-    "@notionhq/client": "^0.4.4"
+    "@notionhq/client": "^0.4.12"
   },
   "devDependencies": {
     "@types/node": "^17.0.10",
